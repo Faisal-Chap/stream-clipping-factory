@@ -1,0 +1,36 @@
+{
+  "id": "discovery-tabs",
+  "version": "1.0.0",
+  "name": "Italic discovery tabs",
+  "reference": "references/04-discovery-tabs.png",
+  "proof": "proofs/04-discovery-tabs.jpg",
+  "use_for": ["location_detail", "unexpected_mechanic", "specific_visual_discovery"],
+  "required_evidence": ["specific_claim_and_source_proof", "clean_view_after_headline"],
+  "face_treatment": "full_bleed",
+  "layers_back_to_front": ["game", "face", "per_line_plates", "headline", "spoken_cue"],
+  "headline": {
+    "font_id": "archivo", "face": "native_italic", "axes": {"wght": 900, "wdth": 98},
+    "size_px": 74, "min_size_px": 64, "align": "center", "case": "upper",
+    "fill": "#FFFEFC", "max_lines": 2, "target_lines": 2, "wrap": "by_measured_phrase",
+    "tracking_em": -0.015
+  },
+  "per_line_plates": {
+    "anchor_cx_top_px": [540, 831], "fill": "#080809",
+    "max_outer_width_px": 890, "cap_box_padding_xy_px": [24, 12],
+    "line_center_dx_px": [0, -12], "line_gap_px": 2,
+    "rake_px": 26, "shape": "parallelogram_top_shifted_right",
+    "measure": "ink_bounds_per_line_including_italic_overhang"
+  },
+  "spoken_cue": {
+    "mode": "single_nonredundant_spoken_beat", "font_id": "archivo", "face": "native_italic",
+    "axes": {"wght": 850, "wdth": 106}, "size_px": 50, "case": "upper", "max_words": 3,
+    "center_xy_px": [540, 705], "fill": "#FFFFFF", "outline": "#121216", "outline_px": 4
+  },
+  "timing": {
+    "in": "opening_frame", "entry_ms": 0, "reading_chars_per_second": 17,
+    "hold_range_ms": [1250, 2800], "out": "before_visual_proof", "exit_ms": 80,
+    "spoken_cue_anchor": "word_pts"
+  },
+  "beat_order": ["name_the_detail", "approach_with_context", "unobstructed_visual_proof", "reaction_or_explanation"],
+  "clear_for": ["sign", "interaction_prompt", "object_that_proves_the_claim"]
+}

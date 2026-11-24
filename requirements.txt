@@ -1,0 +1,10 @@
+# CPU transcription, media analysis, rendering and optional R2 transport.
+faster-whisper==1.2.1
+ctranslate2==4.9.0
+av==19.0.2
+onnxruntime==1.32.0
+opencv-python-headless==4.13.0.92
+Pillow==12.1.1
+fonttools==4.61.1
+tzdata
+boto3==1.42.41

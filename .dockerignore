@@ -1,0 +1,10 @@
+**
+!factory/
+!factory/**
+!docs/
+!docs/VIDEO-TABLE.md
+!docs/videoedit/
+!docs/videoedit/**
+!requirements.txt
+**/__pycache__
+**/*.pyc

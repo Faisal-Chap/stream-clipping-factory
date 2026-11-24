@@ -1,0 +1,33 @@
+name: stream-clipping-factory-self-hosted
+
+services:
+  operator:
+    build: .
+    user: "${FACTORY_UID:-1000}:${FACTORY_GID:-1000}"
+    init: true
+    restart: unless-stopped
+    stop_signal: SIGINT
+    stop_grace_period: 3m
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    ports:
+      - "127.0.0.1:8765:8765"
+    environment:
+      HOME: /data
+      GTA_FACTORY_CREDENTIAL_DIR: /credentials
+      GTA_FACTORY_MODEL_DIR: /data/models
+      GTA_FACTORY_INDIEPOST_WORKSPACE: ${INDIEPOST_WORKSPACE:-Stream Clipping Factory}
+      GTA_FACTORY_YOUTUBE_PROVIDER: ${YOUTUBE_PROVIDER:-}
+      GTA_FACTORY_FULL_REPLAY: ${FULL_REPLAY:-0}
+    volumes:
+      - ./.local/workspace:/data
+      - ./.local/credentials:/credentials
+      - ./.local/recordings:/recordings:ro
+    tmpfs:
+      - /tmp:size=128m,mode=1777
+    labels:
+      factory.owner: stream-clipping-factory
+      factory.purpose: operator-portal-and-media-worker
+      factory.lifecycle: self-hosted
+      factory.cleanup-policy: preserve-user-workspace-and-credentials

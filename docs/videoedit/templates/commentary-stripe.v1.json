@@ -1,0 +1,32 @@
+{
+  "id": "commentary-stripe",
+  "version": "1.0.0",
+  "name": "Striped commentary",
+  "reference": "references/02-commentary-stripe.png",
+  "proof": "proofs/02-commentary-stripe.jpg",
+  "use_for": ["live_observation", "precise_callout", "deadpan_commentary"],
+  "required_evidence": ["intelligible_original_line", "gameplay_showing_its_subject"],
+  "face_treatment": "full_bleed",
+  "layers_back_to_front": ["game", "face", "seam_rules", "optional_mark", "phrase"],
+  "seam_rules": [
+    {"rect_xywh": [0, 663, 1080, 5], "fill": "#FFCB38"},
+    {"rect_xywh": [0, 668, 1080, 10], "fill": "#F3170E"},
+    {"rect_xywh": [0, 678, 1080, 3], "fill": "#17171A"}
+  ],
+  "optional_mark": {
+    "type": "original_double_chevron", "center_xy_px": [540, 672],
+    "size_px": [38, 22], "fill": "#FFF1CC", "outline": "#19181B", "outline_px": 3,
+    "enabled": true
+  },
+  "phrase": {
+    "font_id": "anton", "size_px": 94, "min_size_px": 84, "glyph_scale_x": 1.23,
+    "fill": "#FFFEFA", "outline": "#101015", "outline_px": 8,
+    "center_xy_px": [540, 824], "max_width_px": 870,
+    "align": "center", "case": "spoken_sentence", "target_words": [2, 5],
+    "max_lines": 2, "line_advance_px": 101,
+    "wrap": "by_measured_phrase", "entry_ms": 0, "exit_ms": 0,
+    "in": "first_audible_word", "out": "next_phrase_or_natural_pause"
+  },
+  "beat_order": ["specific_line", "show_what_the_player_means", "answer_or_reaction"],
+  "clear_for": ["vehicle_path", "specific_hud_evidence", "silence_after_punchline"]
+}

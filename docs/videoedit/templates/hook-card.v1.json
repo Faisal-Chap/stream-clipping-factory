@@ -1,0 +1,40 @@
+{
+  "id": "hook-card",
+  "version": "1.0.0",
+  "name": "Seam card",
+  "reference": "references/01-hook-card.png",
+  "proof": "proofs/01-hook-card.jpg",
+  "use_for": ["instant_decision", "recognisable_player_choice", "behavioural_comedy"],
+  "required_evidence": ["visible_choice", "visible_consequence_or_audible_punchline"],
+  "face_treatment": "full_bleed",
+  "layers_back_to_front": ["game", "face", "card", "role_text", "later_dialogue"],
+  "card": {
+    "anchor_cx_cy_px": [540, 714],
+    "width_px": 1000,
+    "padding_xy_px": [36, 34],
+    "radius_px": 56,
+    "fill": "#FFFFFF",
+    "edge": {"color": "#1A1515", "opacity": 0.20, "width_px": 2},
+    "shadow": {"color": "#000000", "opacity": 0.18, "offset_y_px": 5, "blur_px": 12}
+  },
+  "headline": {
+    "font_id": "montserrat", "axes": {"wght": 650},
+    "size_px": 64, "min_size_px": 60, "line_advance_px": 74,
+    "align": "center", "max_lines": 3,
+    "case": "sentence_with_one_uppercase_action",
+    "role_colors": {"body": "#141216", "creator": "#E9004D", "action": "#A23A0B"},
+    "wrap": "by_measured_phrase", "width_treatment": "natural"
+  },
+  "timing": {
+    "in": "opening_frame", "entry_ms": 0,
+    "reading_chars_per_second": 17, "hold_range_ms": [1350, 3400],
+    "out": "before_first_proof_frame", "exit_ms": 90
+  },
+  "later_dialogue": {
+    "mode": "essential_speech_only_after_card", "font_id": "montserrat",
+    "axes": {"wght": 650}, "size_px": 57, "fill": "#FFFFFF",
+    "outline": "#17151A", "outline_px": 4, "center_xy_px": [540, 823], "max_lines": 1
+  },
+  "beat_order": ["decision_already_in_motion", "brief_premise", "visible_consequence", "authentic_reaction"],
+  "clear_for": ["mouth", "decisive_hand_or_vehicle", "proof_frame"]
+}

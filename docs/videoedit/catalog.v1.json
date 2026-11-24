@@ -1,0 +1,34 @@
+{
+  "pack_id": "streamer-reference-four",
+  "version": "1.0.0",
+  "format_version": 1,
+  "path_base": "catalog_directory",
+  "font_manifest": "fonts/manifest.v1.json",
+  "templates": [
+    {"id": "hook-card", "version": "1.0.0", "recipe": "templates/hook-card.v1.json"},
+    {"id": "commentary-stripe", "version": "1.0.0", "recipe": "templates/commentary-stripe.v1.json"},
+    {"id": "gold-camera", "version": "1.0.0", "recipe": "templates/gold-camera.v1.json"},
+    {"id": "discovery-tabs", "version": "1.0.0", "recipe": "templates/discovery-tabs.v1.json"}
+  ],
+  "composition": {
+    "units": "master_pixels_from_top_left",
+    "canvas_px": [1080, 1920],
+    "face_rect_xywh": [0, 0, 1080, 672],
+    "game_rect_xywh": [0, 672, 1080, 1248],
+    "fit": "uniform_scale_source_rois_independently",
+    "timebase": "source_pts_mapped_through_edition",
+    "protected_subjects": ["eyes", "mouth", "game_action", "critical_hud", "destination_chrome"],
+    "safe_text_px": {"left": 64, "right": 64, "top": 96, "bottom": 250},
+    "per_destination_mask": true
+  },
+  "distribution": {
+    "scope": "one_source_stream",
+    "count_unit": "distinct_qualified_story",
+    "mode": "equal_per_active_template",
+    "target_remainder_order": "persisted_rotating_pack_order",
+    "selection": "maximize_story_fit_within_slot_counts",
+    "sequence": "interleave_available_styles",
+    "on_shortfall": "seek_another_distinct_story_then_report_missing_slots",
+    "on_retry": "reuse_stream_plan_and_story_slot"
+  }
+}
